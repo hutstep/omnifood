@@ -69,7 +69,7 @@ if (process.env.NODE_ENV === 'production') {
     })
   );
   config.devtool = 'cheap-module-source-map';
-  config.output.publicPath = '/assets/';
+  config.output.publicPath = 'https://hutstep.github.io/omnifood/assets/';
 }
 
 module.exports = config;
