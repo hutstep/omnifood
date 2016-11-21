@@ -1,0 +1,693 @@
+/* Orange color: #e67e22 */
+
+
+/* ----------------------------------------------
+   BASIC SETUP
+---------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  background-color: #fff;
+  color: #333;
+  font-family: 'TypoPRO Lato', sans-serif;
+  font-size: 20px;
+  overflow-x: hidden;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+/* ----------------------------------------------
+   REUSABLE COMPONENTS
+---------------------------------------------- */
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 80px;
+}
+
+.box {
+  padding: 1%;
+}
+
+
+/* ----- HEADINGS ----- */
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: 200%;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+
+h2::after {
+  display: block;
+  content: " ";
+  width: 100px;
+  height: 2px;
+  background-color: #e67e22;
+  margin: 30px auto 0;
+}
+
+
+/* ----- PARAGRAPHS ----- */
+
+.long-copy {
+  line-height: 145%;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+}
+
+
+/* ----- ICONS ----- */
+
+.icon-big {
+  font-size: 350%;
+  display: block;
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+
+.icon-small {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color: #e67e22;
+  font-size: 120%;
+  margin-right: 10px;
+  /* secrets to align text and icons */
+  line-height: 120%;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+
+
+/* ----- LINKS ----- */
+
+a:link,
+a:visited {
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  padding-bottom: 1px;
+  transition: all 0.2s;
+}
+
+a:focus,
+a:hover,
+a:active {
+  color: #333;
+  border-bottom: 1px solid transparent;
+}
+
+
+/* ----- BUTTONS ----- */
+
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 200px;
+  transition: all 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type="submit"] {
+  background-color: #e67e22;
+  border: 1px solid #e67e22;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  color: #e67e22;
+  border: 1px solid;
+}
+
+.btn:focus,
+.btn:hover,
+.btn:active,
+input[type="submit"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  background-color: #cf6d17;
+}
+
+.btn-full:focus,
+.btn-full:hover,
+.btn-full:active {
+  border: 1px solid #cf6d17;
+}
+
+.btn-ghost:focus,
+.btn-ghost:hover,
+.btn-ghost:active {
+  color: #fff;
+  border: 1px solid #cf6d17;
+}
+
+
+/* ----------------------------------------------
+   HEADER
+---------------------------------------------- */
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.hero-text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1140px;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+
+.logo-black {
+  display: none;
+  height: 50px;
+  width: auto;
+  float: left;
+  margin: 5px 0;
+}
+
+
+/* ----- main navi ----- */
+
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 55px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+  padding: 8px 0;
+}
+
+.main-nav li a:focus,
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid #e67e22;
+}
+
+
+/* ----- mobile navi ----- */
+
+.mobile-nav-icon {
+  float: right;
+  margin-top: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: #fff;
+}
+
+
+/* ----- sticky navi ----- */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 2px #efefef;
+  z-index: 999;
+}
+
+.sticky .main-nav {
+  margin-top: 18px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+  color: #333;
+  padding: 16px 0;
+}
+
+.sticky .logo-black {
+  display: block;
+}
+
+.sticky .logo {
+  display: none;
+}
+
+
+/* ----------------------------------------------
+   FEATURES
+---------------------------------------------- */
+
+.section-features .long-copy {
+  margin-bottom: 30px;
+}
+
+
+/* ----------------------------------------------
+   MEALS
+---------------------------------------------- */
+
+.section-meals {
+  padding: 0;
+}
+
+.section-meals h2 {
+  display: none;
+}
+
+.meals-showcase {
+  list-style: none;
+  width: 100%;
+}
+
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.meal-photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.meal-photo img {
+  width: 100%;
+  height: auto;
+  transform: scale(1.27);
+  transition: transform 0.5s, opacity 0.5s;
+  opacity: 0.7;
+}
+
+.meal-photo img:hover {
+  transform: scale(1.14);
+  opacity: 1;
+}
+
+
+/* ----------------------------------------------
+   HOW IT WORKS
+---------------------------------------------- */
+
+.section-steps {
+  background-color: #f4f4f4;
+}
+
+.steps-box:first-child {
+  text-align: right;
+  padding-right: 3%;
+  margin-top: 30px;
+}
+
+.steps-box:last-child {
+  padding-left: 3%;
+  margin-top: 70px;
+}
+
+.app-screen {
+  width: 40%;
+}
+
+.works-step {
+  margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+  margin-bottom: 80px;
+}
+
+.works-step div {
+  color: #e67e22;
+  border: 2px solid;
+  display: inline-block;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  padding: 5px;
+  font-size: 150%;
+  margin-right: 25px;
+}
+
+.btn-app:link,
+.btn-app:visited,
+.btn-app:focus,
+.btn-app:hover,
+.btn-app:active {
+  border: none;
+}
+
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+
+/* ----------------------------------------------
+   CITIES
+---------------------------------------------- */
+
+.section-cities .box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.city-feature {
+  margin-bottom: 5px;
+}
+
+
+/* ----------------------------------------------
+   TESTIMONIALS
+---------------------------------------------- */
+
+.section-testimonials {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/back-customers.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 145%;
+  position: relative;
+  margin-top: 40px;
+}
+
+blockquote::before {
+  content: "\201C";
+  font-size: 500%;
+  display: block;
+  top: -5px;
+  left: -5px;
+  position: absolute;
+}
+
+cite {
+  font-size: 90%;
+  margin-top: 25px;
+  display: block;
+}
+
+cite img {
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+
+/* ----------------------------------------------
+   SIGN UP
+---------------------------------------------- */
+
+.section-plans {
+  background-color: #f4f4f4;
+}
+
+.plan-box {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 2px 2px #efefef;
+}
+
+.plan-box div {
+  padding: 15px;
+  border-bottom: 1px solid #dedede;
+}
+
+.plan-box div:first-child {
+  background-color: #fcfcfc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child {
+  text-align: center;
+  border-bottom: none;
+}
+
+.plan-price {
+  font-size: 300%;
+  margin-bottom: 10px;
+  font-weight: 100;
+  color: #e67e22;
+}
+
+.plan-price span {
+  font-size: 30%;
+  font-weight: 300;
+}
+
+.plan-price-meal {
+  font-size: 80%;
+}
+
+.plan-box ul {
+  list-style: none;
+}
+
+.plan-box ul li {
+  padding: 5px 0;
+}
+
+
+/* ----------------------------------------------
+   FORM
+---------------------------------------------- */
+
+.contact-form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+input[type="checkbox"] {
+  margin: 10px 5px 10px 0;
+}
+
+.map-box {
+  width: 100%;
+  position: relative;
+  height: 560px;
+}
+
+.map {
+  width: 100%;
+  height: inherit;
+}
+
+.form-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: inherit;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-top: 40px;
+  z-index: 10;
+}
+
+
+/* ----------------------------------------------
+   FOOTER
+---------------------------------------------- */
+
+footer {
+  background-color: #333;
+  padding: 50px;
+  font-size: 80%;
+}
+
+.footer-nav {
+  list-style: none;
+  float: left;
+}
+
+.social-links {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.social-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: none;
+  border-bottom: none;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.footer-nav li a:focus,
+.footer-nav li a:hover,
+.footer-nav li a:active {
+  color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+  font-size: 160%;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+  transition: color 0.2s;
+}
+
+.ion-social-facebook:focus,
+.ion-social-facebook:hover,
+.ion-social-facebook:active {
+  color: #3b5998;
+}
+
+.ion-social-twitter:focus,
+.ion-social-twitter:hover,
+.ion-social-twitter:active {
+  color: #00aced;
+}
+
+.ion-social-googleplus:focus,
+.ion-social-googleplus:hover,
+.ion-social-googleplus:active {
+  color: #dd4b39;
+}
+
+.ion-social-instagram:focus,
+.ion-social-instagram:hover,
+.ion-social-instagram:active {
+  color: #517fa4;
+}
+
+footer p {
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+/* ----------------------------------------------
+   ANIMATIONS
+---------------------------------------------- */
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3 {
+  opacity: 0;
+  animation-duration: 1s;
+}
+
+.js--wp-4 {
+  animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated {
+  opacity: 1;
+}

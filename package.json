@@ -1,0 +1,34 @@
+{
+  "name": "omnifood",
+  "version": "1.0.0",
+  "description": "Website which I developed for an Udemy responsive web design course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devbuild": "rm -rf ./docs/ && webpack && mkdir -p ./docs/resources && cp -r ./src/resources/img/ ./docs/resources/ && cp -r ./src/resources/favicons/ ./docs/resources/",
+    "devserver": "chromium 'http://localhost:8080' && webpack-dev-server --host 0.0.0.0",
+    "build": "rm -rf ./docs/ && NODE_ENV=production webpack && mkdir -p ./docs/resources && cp -r ./src/resources/img/ ./docs/resources/ && cp -r ./src/resources/favicons/ ./docs/resources/",
+    "buildserver": "npm run build && cd docs && chromium http://localhost:8000 && php -S 0.0.0.0:8000"
+  },
+  "author": "Stephan Huettner",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "css-loader": "^0.25.0",
+    "extract-loader": "0.0.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "postcss-loader": "^1.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "typopro-web": "^3.5.0",
+    "waypoints": "^4.0.1"
+  }
+}
