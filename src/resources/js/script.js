@@ -72,7 +72,7 @@ $(document).ready(function () {
 
   $('.js--nav-icon').click(function () {
     var nav = $('.js--main-nav');
-    var icon = $(this + ' i');
+    var icon = $('i', this);
     nav.slideToggle(200);
     if (icon.hasClass('ion-navicon-round')) {
       icon.addClass('ion-close-round');
